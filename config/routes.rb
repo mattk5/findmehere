@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
-	
-  get 'pages/home'
-
-  get 'pages/about'
-
-  get 'pages/contact'
-
+	root 'find_me_app#home'	
+	get '/about', 	to: 'find_me_app#about'
+	get '/contact', to: 'find_me_app#contact'
 end
