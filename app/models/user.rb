@@ -1,9 +1,10 @@
 class User < ApplicationRecord
+	before_save { self.email = email.downcase }
 	has_secure_password
 	EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
 	validates :name, presence: true, length: { maximum: 55 }
 	validates :email, presence: true, uniqueness: { case_sensitive: false }, length: { maximum: 255 }, format: { with: EMAIL_REGEX }
-	validate :password, presence: true, length: { minimum: 8 }
+	validates :password, presence: true, length: { minimum: 8 }
 	attr_accessor :remember_token
 
 	def self.digest(string)
