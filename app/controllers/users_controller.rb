@@ -46,6 +46,7 @@ class UsersController < ApplicationController
       unless logged_in?
         flash[:danger] = "Sign in to update profile."
         redirect_to login_url
+      end
     end
 
     def correct_user
