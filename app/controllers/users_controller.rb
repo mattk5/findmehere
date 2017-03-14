@@ -22,7 +22,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    @contact = Contac.find(params[:user_id])
+    @contact = Contact.find(params[:user_id])
   end
 
   def update 
