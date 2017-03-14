@@ -4,11 +4,13 @@ class UsersController < ApplicationController
 
   def new
   	@user = User.new
+    @contact = Contact.new
   end
 
   def create
   	@user = User.new(user_params)
-  	if @user.save 
+    @contact = Contact.new(params[:phone_number])
+  	if @user.save && @contact.save
   		log_in @user 
   		remember @user 
   		flash[:success] = "Welcome! Account created."
@@ -20,10 +22,12 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    @contact = Contact.find(params[:user_id])
   end
 
   def update 
     @user = User.find(params[:id])
+    @contact = Contact.find(params[:user_id])
     if @user.update_attributes(user_params)
       flash[:success] = "Profile updated"
       redirect_to @user 
@@ -34,6 +38,7 @@ class UsersController < ApplicationController
 
   def show
   	@user = User.find(params[:id])
+    @contact = Contact.find(params[:user_id])
   end
 
   private 

@@ -6,6 +6,8 @@ class User < ApplicationRecord
 	validates :name, presence: true, length: { maximum: 55 }
 	validates :email, presence: true, uniqueness: { case_sensitive: false }, length: { maximum: 255 }, format: { with: EMAIL_REGEX }
 	validates :password, presence: true, length: { minimum: 8 }
+	has_many :contacts
+	accepts_nested_attributes_for :contacts
 
 	def self.digest(string)
 		cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost 
