@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   def new
   	@user = User.new
-    @user.contacts.build
+    @contact = @user.contacts.build
   end
 
   def create
@@ -22,7 +22,6 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    @user.contacts.build
   end
 
   def update 
@@ -38,7 +37,7 @@ class UsersController < ApplicationController
 
   def show
   	@user = User.find(params[:id])
-    # @contact = Contact.find(params[:user_id])
+    @contact = Contact.find(params[:id])
   end
 
   private 

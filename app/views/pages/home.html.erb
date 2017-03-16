@@ -1,6 +1,14 @@
 <% provide(:title, "Home") %>
-<div class="center jumbotron">
-	<h1>Find Me Here</h1>
-		<p>Welcome to Find Me Here. Share your location with people that care about you.</p>
-	<%= link_to "Create account.", signup_path, class: "btn btn-lg btn-primary" %>
-</div>
+<!-- do an if and/or to see if logged_in to show button to user -->
+<% if logged_in? %>
+	<div class="center jumbotron">
+		<p>THIS IS THE BUTTON</p>
+	</div>
+<% else %>
+	<div class="center jumbotron">
+		<h1>Find Me Here</h1>
+			<p>Welcome to Find Me Here. Share your location with people that care about you.</p>
+		<%= link_to "Create account.", signup_path, class: "btn btn-lg btn-primary" %>
+		<%= link_to "Sign In.", login_path, class: "btn btn-md btn-primary" %>
+	</div>
+<% end %>
