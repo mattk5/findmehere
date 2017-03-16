@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   def new
   	@user = User.new
-    @contact = @user.contacts.build
+    @user.contacts.build
   end
 
   def create
