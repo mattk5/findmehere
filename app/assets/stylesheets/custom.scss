@@ -10,6 +10,7 @@ $gray-medium-light: #eaeaea;
 body {
 	padding-top: 60px;
 	background-color: #ffffff;
+	height: 100%;
 }
 
 section {
@@ -34,6 +35,12 @@ textarea {
 .about {
 	max-width: 700px;
 	margin: 0 auto;
+}
+
+.image {
+	background: url(https://www.sfmta.com/sites/default/files/projects/140709_Market%20Street_044.jpg) no-repeat center center;
+	background-size: cover; 
+	text-align: center;
 }
 
 /* typography */
