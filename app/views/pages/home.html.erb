@@ -1,11 +1,10 @@
 <% provide(:title, "Home") %>
-<!-- do an if and/or to see if logged_in to show button to user -->
 <% if logged_in? %>
-	<div class="center jumbotron">
+	<div class="page-header text-center home">
 		<p>THIS IS THE BUTTON</p>
 	</div>
 <% else %>
-	<div class="center jumbotron">
+	<div class="page-header text-center home">
 		<h1>Find Me Here</h1>
 			<p>Welcome to Find Me Here. Share your location with people that care about you.</p>
 		<%= link_to "Create account.", signup_path, class: "btn btn-lg btn-primary" %>
