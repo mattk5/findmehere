@@ -18,11 +18,11 @@
 			<%= f.password_field :password_confirmation, class: 'form-control' %>
 
 			<%= f.fields_for :contacts do |c| %>
-				<%= c.label :phone_number %>
-				<%= c.text_field :phone_number, class: 'form-control' %>
-
 				<%= c.label :contact_name %>
 				<%= c.text_field :contact_name, class: 'form-control' %>
+				
+				<%= c.label :phone_number %>
+				<%= c.text_field :phone_number, class: 'form-control' %>
 			<% end %>
 
 			<%= f.submit "Create Account", class: "btn btn-primary" %>
