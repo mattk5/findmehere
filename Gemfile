@@ -16,6 +16,7 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'geokit-rails', '~> 2.2'
+gem 'pry', '~> 0.10.4'
 
 group :development, :test do
   gem 'byebug', platform: :mri
