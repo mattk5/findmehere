@@ -4,9 +4,9 @@
 		<p>THIS IS THE BUTTON</p>
 		<% content_for :additional_javascripts do %>
 			<%= javascript_tag do %>
-				var hi = new Hello();
-				hi.greet();
-				hi.world();
+				var hi = new Location();
+				hi.coord();
+				hi.street();
 
 			<% end %>
 		<% end %>
