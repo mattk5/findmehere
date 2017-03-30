@@ -9,6 +9,7 @@ function Location() {
               lat: position.coords.latitude,
               lng: position.coords.longitude
             };
+            console.log("getting the coords!")
         })};
     return pos;
   };
@@ -19,6 +20,12 @@ function Location() {
 
         return $.getJSON(url,function (data, textStatus) {
           streetAddress = data.results[0].formatted_address;
+        console.log("converting to address!")
       });
   }
 }
+
+var local = new Location();
+
+$(local.coord);
+setTimeout(local.street, 5000);
