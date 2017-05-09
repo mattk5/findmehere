@@ -2,20 +2,17 @@
 <% if logged_in? %>
 	<div class="page-header text-center home">
 		<p>THIS IS THE BUTTON</p>
-		<% content_for :additional_javascripts do %>
-			<%= javascript_tag do %>
-			
-			<% end %>
-		<% end %>
+		
 	</div>
 <% else %>
-<div classname="example-address">sdafsf</div>
+<div classname="example-address"></div>
 
 	<div class="image">
 		<img class="img-responsive" src="/assets/market_street.jpg">
 	</div>
 	<div class="page-header text-center home">
 		<h1>Find Me Here</h1>
+			<p>Thank you for your patience as we continue to improve the final version of Find Me Here</p>
 			<p>Welcome to Find Me Here. Share your location with people that care about you.</p>
 		<%= link_to "Create account.", signup_path, class: "btn btn-lg btn-primary" %>
 		<%= link_to "Sign In.", login_path, class: "btn btn-md btn-primary" %>
